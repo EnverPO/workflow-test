@@ -1,0 +1,21 @@
+name: Validate Common Library
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  run:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: Get changes
+        run: |
+          if grep -qE "<Name>([a-zA-Z0-9_]+MediaOpsCommon[a-zA-Z0-9_]+|MediaOpsCommon[a-zA-Z0-9_]+|[a-zA-Z0-9_]+MediaOpsCommon)</Name>" ./*; then
+            echo "Variations of 'MediaOpsCommon' found. Aborting merge."
+            exit 1
+          else
+            echo "No variations found. Proceeding."
+          fi
