@@ -21,7 +21,7 @@ jobs:
           fi
       - name: Validate Common automation script library name
         run: |
-          if grep -qE "<Param type="libraryName">([a-zA-Z0-9_]+MediaOpsCommon[a-zA-Z0-9_]+|MediaOpsCommon[a-zA-Z0-9_]+|[a-zA-Z0-9_]+MediaOpsCommon)</Param>" ./*; then
+          if grep -qE "<Param type=\"libraryName\">([a-zA-Z0-9_]+MediaOpsCommon[a-zA-Z0-9_]+|MediaOpsCommon[a-zA-Z0-9_]+|[a-zA-Z0-9_]+MediaOpsCommon)</Param>" ./*; then
             echo "Variations of 'MediaOpsCommon' automation script library name found. Is this intentional?"
             exit 1
           else
