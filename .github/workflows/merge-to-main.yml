@@ -9,8 +9,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 2
       - name: Validate Common automation scipt name
         run: |
           if grep -qE "<Name>([a-zA-Z0-9_]+MediaOpsCommon[a-zA-Z0-9_]+|MediaOpsCommon[a-zA-Z0-9_]+|[a-zA-Z0-9_]+MediaOpsCommon)</Name>" MediaOpsCommon.xml; then
