@@ -11,17 +11,17 @@ jobs:
         uses: actions/checkout@v4
       - name: Validate Common automation scipt name
         run: |
-          if grep -qE "<Name>([a-zA-Z0-9_]+MediaOpsCommon[a-zA-Z0-9_]+|MediaOpsCommon[a-zA-Z0-9_]+|[a-zA-Z0-9_]+MediaOpsCommon)</Name>" MediaOpsCommon.xml; then
-            echo "Variations of 'MediaOpsCommon' automation script name found. Is this intentional?"
-            exit 1
-          else
+          if grep -qE "<Name>MediaOpsCommon</Name>" MediaOpsCommon.xml; then
             echo "'MediaOpsCommon' automation script found. Proceeding."
+          else
+            echo "Usual 'MediaOpsCommon' automation script name seems to be changed. Is this intentional?"
+            exit 1
           fi
       - name: Validate Common automation script library name
         run: |
-          if grep -qE "<Param type=\"libraryName\">([a-zA-Z0-9_]+MediaOpsCommon[a-zA-Z0-9_]+|MediaOpsCommon[a-zA-Z0-9_]+|[a-zA-Z0-9_]+MediaOpsCommon)</Param>" MediaOpsCommon.xml; then
-            echo "Variations of 'MediaOpsCommon' automation script library name found. Is this intentional?"
-            exit 1
+          if grep -qE "<Param type=\"libraryName\">MediaOpsCommon</Param>" MediaOpsCommon.xml; then
+            echo "'MediaOpsCommon' library found. Proceeding."
           else
-            echo "'MediaOpsCommon' automation script library found. Proceeding."
+            echo "Usual 'MediaOpsCommon' library name seems to be changed. Is this intentional?"
+            exit 1
           fi
