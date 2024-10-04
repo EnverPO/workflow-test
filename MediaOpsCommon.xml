@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <DMSScript options="272" xmlns="http://www.skyline.be/automation">
-	<Name>MediaOpsCommon</Name>
+	<Name>MediaOpsCommonEnver</Name>
 	<Description>Library specific to the MediaOps project</Description>
 	<Type>Automation</Type>
 	<Author>SKYLINE2\TomW</Author>
@@ -21,7 +21,7 @@
 			<Value><![CDATA[[Project:MediaOps.Common_1]]]></Value>
 			<!--<Param type="debug">true</Param>-->
 			<Param type="preCompile">true</Param>
-			<Param type="libraryName">MediaOpsCommon</Param>
+			<Param type="libraryName">EnverMediaOpsCommon</Param>
 		</Exe>
 	</Script>
 </DMSScript>
