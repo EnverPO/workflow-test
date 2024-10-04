@@ -21,7 +21,7 @@
 			<Value><![CDATA[[Project:MediaOps.Common_1]]]></Value>
 			<!--<Param type="debug">true</Param>-->
 			<Param type="preCompile">true</Param>
-			<Param type="libraryName">EnvrMediaOpsCommonEnver</Param>
+			<Param type="libraryName">MediaOpsCommonEnver</Param>
 		</Exe>
 	</Script>
 </DMSScript>
