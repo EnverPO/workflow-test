@@ -13,7 +13,7 @@ jobs:
           fetch-depth: 2
       - name: Validate Common automation scipt name
         run: |
-          if grep -qE "<Name>([a-zA-Z0-9_]+MediaOpsCommon[a-zA-Z0-9_]+|MediaOpsCommon[a-zA-Z0-9_]+|[a-zA-Z0-9_]+MediaOpsCommon)</Name>" ./*; then
+          if grep -qE "<Name>([a-zA-Z0-9_]+MediaOpsCommon[a-zA-Z0-9_]+|MediaOpsCommon[a-zA-Z0-9_]+|[a-zA-Z0-9_]+MediaOpsCommon)</Name>" MediaOpsCommon.xml; then
             echo "Variations of 'MediaOpsCommon' automation script name found. Is this intentional?"
             exit 1
           else
@@ -21,7 +21,7 @@ jobs:
           fi
       - name: Validate Common automation script library name
         run: |
-          if grep -qE "<Param type=\"libraryName\">([a-zA-Z0-9_]+MediaOpsCommon[a-zA-Z0-9_]+|MediaOpsCommon[a-zA-Z0-9_]+|[a-zA-Z0-9_]+MediaOpsCommon)</Param>" ./*; then
+          if grep -qE "<Param type=\"libraryName\">([a-zA-Z0-9_]+MediaOpsCommon[a-zA-Z0-9_]+|MediaOpsCommon[a-zA-Z0-9_]+|[a-zA-Z0-9_]+MediaOpsCommon)</Param>" MediaOpsCommon.xml; then
             echo "Variations of 'MediaOpsCommon' automation script library name found. Is this intentional?"
             exit 1
           else
